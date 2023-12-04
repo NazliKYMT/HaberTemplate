@@ -1,15 +1,6 @@
 import PropTypes from 'prop-types';
-import { styled } from '@mui/material/styles';
-import { Box, Divider, Chip, Grid, Paper, Typography,Button } from "@mui/material";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,
-
-}));
+import { Box, Grid, Paper, Typography,Button } from "@mui/material";
+import CardComponents2 from '../component/card2';
 
 export default function cardComponents({ data }){
   var mdx;
@@ -27,105 +18,168 @@ export default function cardComponents({ data }){
   heightx="300px";
   widthx="400px"
 }
-console.log(mdx)
-    return(     
-      <Grid item xs={12} md={4}>
-      <Paper sx={{ borderRadius: "15px", backgroundColor: "#35356b" }}>
-        <Box
+    return(   
+      <Grid container spacing={3} sm={12}  xs={12} md={12} sx={{width:"100%"}} >    
+      <Grid item xs={12} md={8} >  
+      <Box sx={{
+        borderRadius: "5px",
+        backgroundColor: "#35356b",
+        backgroundImage:`url(${"https://images.unsplash.com/photo-1585592377048-a627ec452b7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDE2OTczNDE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"})`,
+        backgroundSize:"cover",
+        height:"600px",
+        width:"100%",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "flex-end",
+        alignItems:"flex-start",marginBottom:"10px"
+        }}>
+         <Typography variant='h2'
           sx={{
             display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            padding: "20px",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            margin:"30px",
+            color:"white"
           }}
-        >
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              marginTop: "10px",
-              justifyContent: "flex-start",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <img
-              src="https://e7.pngegg.com/pngimages/24/817/png-clipart-playstation-4-raiders-of-the-broken-planet-playstation-network-playstation-plus-playstation-electronics-text.png"
-              alt="cardimage"
-              style={{ width: "50px", height: "50px", marginRight: "10px" }}
-            />
-            <Typography variant="p">{data.name}</Typography>
+         >
+      {data.name}
+    </Typography>   
+     <CardComponents2 key={data.key} data={data}/>      
+      </Box>
+      <Box sx={{
+      display: "flex",
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent:"space-between",
+      width:"100%"
+      }}
+  >     
+      <Grid  item xs={12} sm={12} md={6} sx={{padding:"5px" }}>
+          <Box sx={{
+            borderRadius: "5px",
+            backgroundImage:`url(${"https://images.unsplash.com/photo-1585592377048-a627ec452b7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDE2OTczNDE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"})`,
+            backgroundSize:"cover",
+            width:"100%",
+            height:"420px",
+            }}>
+                    
+              <Typography variant='h2'
+                sx={{
+                  display: "flex",
+                  flexDirection:"column",
+                  justifyContent:"flex-end",
+                  alignItems:"flex-start",
+                  width:"100%",  
+                  height:"350px",
+                  color:"white",
+                  marginLeft:"20px"                
+                }}
+              >
+                içerikkkss sol
+          
+            </Typography>
+            <CardComponents2 key={data.key} data={data}/>    
           </Box>
-
-          <Divider sx={{ width: "99%", mt: 1 }} />
-          <Typography variant="p" sx={{ mt: 1 }}>
-            {data.name}
-          </Typography>
-          <Box
-            sx={{
-              display: "flex",
-              flexDirection: "row",
-              marginTop: "10px",
-              justifyContent: "space-between",
-              alignItems: "center",
-              width: "100%",
-            }}
-          >
-            <Chip label={data.chip} color={data.chipColor} />
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                ml: 1,
-                justifyContent: "flex-start",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src="https://www.svgrepo.com/show/13695/star.svg"
-                alt="cardimage"
-                style={{ width: "20px", height: "20px", marginRight: "5px" }}
-              />
-              <Typography variant="h6">{data.name}</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                ml: 1,
-                justifyContent: "flex-start",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb0Hmlxrb-nSWkZtxnUJgW9fyLgiSf_Re9tw&usqp=CAU"
-                alt="cardimage"
-                style={{ width: "20px", height: "20px", marginRight: "5px" }}
-              />
-              <Typography variant="h6">{data.name}</Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexDirection: "row",
-                ml: 1,
-                justifyContent: "flex-start",
-                alignItems: "center",
-              }}
-            >
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcEWGtqr8nQtm3GSnkk3QCL2CwQou1zr4FiA&usqp=CAU"
-                alt="cardimage"
-                style={{ width: "20px", height: "20px", marginRight: "5px" }}
-              />
-              <Typography variant="h6">{data.name}</Typography>
-            </Box>
+      </Grid>
+      <Grid item xs={12} sm={12} md={6} sx={{padding:"5px" }}>
+          <Box sx={{
+              borderRadius: "5px",
+              backgroundImage:`url(${"https://images.unsplash.com/photo-1585592377048-a627ec452b7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDE2OTczNDE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"})`,
+              backgroundSize:"cover",
+              width:"100%",
+              height:"420px",
+            }}>
+          
+          <Typography variant='h2'
+                sx={{
+                  display: "flex",
+                  flexDirection:"column",
+                  justifyContent:"flex-end",
+                  alignItems:"flex-start",
+                  width:"90%",  
+                  height:"350px",
+                  color:"white",
+                  marginLeft:"20px"                
+                }}
+              >
+                içerikkkss sağ
+          
+            </Typography>
+            <CardComponents2 key={data.key} data={data}/>    
           </Box>
-        </Box>
-      </Paper>
-    </Grid>
+      </Grid>
+      </Box>  
+     </Grid>
+       <Grid item xs={12}  md={4} >
+       <Box sx={{
+          display: "flex",
+          flexDirection: "column",
+          justifyContent:"flex-start",
+          alignItems:"flex-start",
+          width:"100%",height:"100%",
+         paddingBottom:"10px"}}>
+             <Box sx={{
+               width:"100%",
+               backgroundImage:`url(${"https://images.unsplash.com/photo-1585592377048-a627ec452b7e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxyYW5kb218MHx8d2FsbHBhcGVyc3x8fHx8fDE3MDE2OTczNDE&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1080"})`,
+               backgroundSize:"cover",
+               height:"50%",                
+               borderRadius: "5px",
+               display: "flex",
+               flexDirection:"column",
+               justifyContent:"flex-end",
+               alignItems:"flex-start",
+               color:"white" , marginBottom:"20px"  
+             }}
+               >  
+                 <Typography variant='h2'
+               sx={{
+                 display: "flex",
+                 flexDirection:"column",
+                 justifyContent:"flex-end",
+                 alignItems:"flex-start",
+                 width:"90%",  
+                 height:"350px",
+                 color:"white",
+                 marginBottom:"20px",
+                 marginLeft:"10px"                 
+               }}
+             >
+                 fdf</Typography> 
+                 <CardComponents2 key={data.key} data={data}/>    
+                 </Box>
+                 <Box sx={{
+               width:"100%",
+               backgroundImage:`url(${"https://img.freepik.com/free-photo/global-connections_53876-89039.jpg?w=1380&t=st=1701687394~exp=1701687994~hmac=68503d3719a8658b1730851f4f78c828027f415c7f02f5e1b9189e7ae1ca4962"})`,
+               backgroundSize:"cover",
+               height:"50%",                
+               borderRadius: "5px",
+               display: "flex",
+               flexDirection:"column",
+               justifyContent:"flex-end",
+               alignItems:"flex-start",
+               color:"white",  marginBottom:"20px", }}
+               >
+                    <Typography 
+               sx={{
+                 display: "flex",
+                 flexDirection:"column",
+                 justifyContent:"flex-end",
+                 alignItems:"flex-start",
+                 width:"90%",  
+                 height:"400px",
+                 color:"white",
+                 marginBottom:"20px",
+                 marginLeft:"10px"                  
+               }}
+             >fdf</Typography>
+              <CardComponents2 key={data.key} data={data}/>    
+                 </Box>
+       </Box>
+     </Grid>
+     </Grid>
      );
-    }
+};
 cardComponents.prototype={
     data:PropTypes.array
 };
