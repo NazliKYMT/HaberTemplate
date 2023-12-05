@@ -21,15 +21,17 @@ console.log(data.name +" card2")
             flexDirection: "row",
             justifyContent:"space-between",
             alignItems:"center",
-            width:"100%",height:"50px",margin:"20px"}}>
+            width:"100%",
+            height:"40px",
+            margin:"20px"}}>
               
-              <Typography variant='h6'
+              <Typography  variant='h6'
                  sx={{
                    height:"50px",
                    color:"white"               
                  }}
                >
-                   {data.phone}</Typography> 
+                   {data.type}</Typography> 
                    <Typography variant='h6'
                  sx={{
                    height:"50px",
@@ -37,7 +39,7 @@ console.log(data.name +" card2")
                    marginRight:"30px"               
                  }}
                >
-                {data.website}</Typography> 
+                {data.tarih}</Typography> 
                   
          </Box> 
      );
